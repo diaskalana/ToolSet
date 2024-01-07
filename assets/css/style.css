@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Pacifico&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: "Pacifico", cursive; */
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #faebd7;
+}
+button,
+input,
+select {
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+label {
+  font-size: 0.9rem;
+}
+button {
+  border-radius: 5px;
+  border: 2px solid black;
+  /* font-size: 1rem; */
+}
+button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.mainContainer {
+  width: calc(100% - 40px);
+  /* width: 100%; */
+  max-width: 800px;
+  /* padding: 0 10px; */
+  z-index: 1;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+#logo {
+  width: 50px;
+}
+#mainMenu {
+  display: flex;
+  align-items: center;
+}
+#mainMenu > a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+#mainMenu > a:hover {
+  border-bottom: black solid 2px;
+}
+
+#githubBtn {
+  padding: 5px 20px;
+}
+
+.btnflex {
+  display: flex;
+  align-items: center;
+}
+.btnflex > img {
+  width: 25px;
+  margin-right: 5px;
+}
+
+/* For github button hover effect:start */
+#githubBtn img:nth-child(1) {
+  display: none;
+}
+
+#githubBtn:hover img:nth-child(1) {
+  display: block;
+}
+#githubBtn:hover img:nth-child(2) {
+  display: none;
+}
+/* For github button hover effect:end */
+
+.searchSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 100px;
+  /* background-color: #faebd7; */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.searchSection > h1 {
+  font-family: "Pacifico", cursive;
+  /* padding: 0; */
+  margin: 0;
+}
+#search {
+  width: 100%;
+  padding: 10px;
+  border-radius: 50px;
+  text-align: center;
+  border: solid black 2px;
+  font-size: 1rem;
+}
+/* To remove the close button on the search field */
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.suggestions {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+}
+.suggestions button {
+  padding: 5px 20px;
+  margin: 0;
+}
+hr {
+  margin: 20px 0;
+}
+.toolSection {
+  margin: 50px 0;
+  text-align: center;
+}
+.toolItem {
+  padding: 5px 20px;
+  margin: 0 10px 20px 10px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Search function styles */
+
+.searchContainer {
+  width: 100%;
+  position: relative;
+  margin: 15px auto;
+}
+.searchContainer input,
+.searchContainer .searchSuggestions {
+  width: 100%;
+  background: #faebd7;
+  text-align: center;
+}
+.searchContainer input {
+  background-color: transparent;
+}
+.searchContainer .searchSuggestions {
+  position: absolute;
+  top: 60px;
+}
+
+.searchSuggestions ul {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+}
+.searchSuggestions ul.has-suggestions {
+  display: block;
+}
+.searchSuggestions ul li {
+  padding: 10px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+}
+.searchSuggestions ul li:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Modal styles */
+.modal {
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* padding: 50px; */
+  overflow: auto;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  display: none;
+}
+.modalContent {
+  background-color: #fefefe;
+  max-width: 800px;
+  margin: 50px;
+  padding: 20px;
+  /* position: relative; */
+}
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modalHeader h3 {
+  margin: 0;
+}
+.modalDescription {
+  text-align: justify;
+}
+
+/* The Close Button */
+.close {
+  /* position: absolute;
+  right: 10px;
+  top: 10px; */
+  color: black;
+  width: 50px;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}

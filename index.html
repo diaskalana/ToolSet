@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToolSet</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicons/site.webmanifest" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/tools.css" />
+    <script type="module" src="./assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="header">
+        <a href="#"
+          ><img src="./assets/images/logo.png" alt="site-logo" id="logo"
+        /></a>
+        <nav id="mainMenu">
+          <a href="#">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JavaScript</a>
+          <a href="#">Calculators</a>
+          <button
+            id="githubBtn"
+            onclick="window.open('https://github.com/diaskalana/ToolSet','_blank')"
+          >
+            <div class="btnflex">
+              <img src="./assets/images/github-30-light.png" alt="" />
+              <img src="./assets/images/github-30.png" alt="" />View on Github
+            </div>
+          </button>
+        </nav>
+      </div>
+      <div class="searchSection">
+        <h1>ToolSet</h1>
+        <p>
+          Welcome to ToolSet - Your Ultimate Online Toolkit! Explore a diverse
+          collection of powerful online tools all in one place.
+        </p>
+        <div class="searchContainer">
+          <input
+            placeholder="Search ToolSet..."
+            type="search"
+            autocomplete="off"
+            id="search"
+          />
+          <div class="searchSuggestions">
+            <ul></ul>
+          </div>
+        </div>
+
+        <div class="suggestions">
+          Suggestions:
+          <button class="toolItem">HTML</button>
+          <button class="toolItem">CSS</button>
+          <button class="toolItem">JavaScript</button>
+        </div>
+      </div>
+      <div class="toolSection">
+        <h2>Popular Tools</h2>
+        <hr />
+        <button class="toolItem BackgroundImageGenerator">
+          Background Image Generator
+        </button>
+        <button class="toolItem">Tool Item</button>
+        <button class="toolItem">Tool Item</button>
+        <button class="toolItem">Tool Item</button>
+      </div>
+
+      <div class="toolSection">
+        <h2>New Tools</h2>
+        <hr />
+        <button class="toolItem BackgroundImageGenerator">
+          Background Image Generator
+        </button>
+        <button class="toolItem">Tool Item</button>
+        <button class="toolItem">Tool Item</button>
+        <button class="toolItem">Tool Item</button>
+        <button class="toolItem">Tool Item</button>
+        <button class="toolItem">Tool Item</button>
+        <button class="toolItem">Tool Item</button>
+        <button class="toolItem">Tool Item</button>
+      </div>
+      <footer>
+        <p>Made with 🖤</p>
+        <p id="copyright-text">
+          Copyright © <span id="year">2024</span> ToolSet
+        </p>
+      </footer>
+    </div>
+    <div class="modal">
+      <div class="modalContent">
+        <div class="modalHeader">
+          <h3></h3>
+          <svg
+            class="close"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-width="0.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </div>
+        <p class="modalDescription"></p>
+        <div class="modalTarget"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+/* Background Image Generator */
+
+.bgImageGenerator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.bgImageGeneratorControls {
+  width: 300px;
+}
+.bgImageGeneratorControls input,
+select {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  border: solid black 2px;
+  border-radius: 5px;
+}
+.bgImageGeneratorControls input[type="color"] {
+  padding: 2px 5px;
+}
+.bgImageGeneratorControls label,
+input,
+select {
+  display: block;
+  margin-bottom: 5px;
+}
+.bgImageGeneratorControls input,
+select {
+  margin-bottom: 10px;
+}
+
+.bgImageGeneratorOutput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.bgImageGeneratorPreview {
+  /* border: 2px solid #faebd7; */
+  aspect-ratio: 16 / 9;
+  background-color: #faebd7;
+  background-image: url("../images/bgDummy.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+}
+.bgImageGeneratorCode {
+  border: 2px solid black;
+  padding: 10px;
+  /* height: 50px; */
+}
+.bgImageGeneratorBtns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.bgImageGeneratorBtns > button {
+  padding: 5px 20px;
+}
