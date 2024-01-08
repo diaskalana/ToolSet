@@ -1,4 +1,5 @@
-import { backgroundImageGenerator } from "./backgroundImageGenerator.js";
+import { CSSBackgroundImageGenerator } from "./CSSBackgroundImageGenerator.js";
+import { HTMLButtonGenerator } from "./HTMLButtonGenerator.js";
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -14,9 +15,11 @@ document.onclick = function (event) {
     if (event.target.classList.contains('toolItem')) {
         modal.style.display = "flex";
     }
-    if (event.target.classList.contains('BackgroundImageGenerator')) {
-        backgroundImageGenerator();
+    if (event.target.classList.contains('CSSBackgroundImageGenerator')) {
+        CSSBackgroundImageGenerator();
 
+    } else if (event.target.classList.contains('HTMLButtonGenerator')) {
+        HTMLButtonGenerator();
     }
 }
 
@@ -36,7 +39,7 @@ window.onclick = function (event) {
 const input = document.querySelector('#search');
 const suggestions = document.querySelector('.searchSuggestions ul');
 
-const tools = ['Background Image Generator', 'Alaska'];
+const tools = ['CSS Background Image Generator', 'HTML Button Generator'];
 tools.sort()
 
 function search(str) {
@@ -93,8 +96,10 @@ function useSuggestion(e) {
     modal.style.display = "flex";
 
     // Update each time you add a tool
-    if (e.target.innerText == 'Background Image Generator') {
-        backgroundImageGenerator();
+    if (e.target.innerText == 'CSS Background Image Generator') {
+        CSSBackgroundImageGenerator();
+    } else if (e.target.innerText == 'HTML Button Generator') {
+        HTMLButtonGenerator();
     }
 
 }
@@ -105,3 +110,7 @@ document.addEventListener("click", function (e) {
 });
 input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
+
+
+// HTML Button Generator
+

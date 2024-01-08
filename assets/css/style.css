@@ -25,7 +25,7 @@ label {
 button {
   border-radius: 5px;
   border: 2px solid black;
-  /* font-size: 1rem; */
+  font-size: 1rem;
 }
 button:hover {
   cursor: pointer;
@@ -112,6 +112,10 @@ button:hover {
   text-align: center;
   border: solid black 2px;
   font-size: 1rem;
+}
+
+#search:focus {
+  outline: none;
 }
 /* To remove the close button on the search field */
 input[type="search"]::-webkit-search-cancel-button {
@@ -211,6 +215,9 @@ footer {
   margin: 50px;
   padding: 20px;
   /* position: relative; */
+}
+.modalContent h4 {
+  margin: 20px 0 10px 0;
 }
 .modalHeader {
   display: flex;
