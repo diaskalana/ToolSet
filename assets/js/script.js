@@ -1,5 +1,6 @@
 import { CSSBackgroundImageGenerator } from "./CSSBackgroundImageGenerator.js";
 import { HTMLButtonGenerator } from "./HTMLButtonGenerator.js";
+import { CSSBoxShadowGenerator } from "./CSSBoxShadowGenerator.js";
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -20,6 +21,8 @@ document.onclick = function (event) {
 
     } else if (event.target.classList.contains('HTMLButtonGenerator')) {
         HTMLButtonGenerator();
+    } else if (event.target.classList.contains('CSSBoxShadowGenerator')) {
+        CSSBoxShadowGenerator();
     }
 }
 
@@ -39,7 +42,7 @@ window.onclick = function (event) {
 const input = document.querySelector('#search');
 const suggestions = document.querySelector('.searchSuggestions ul');
 
-const tools = ['CSS Background Image Generator', 'HTML Button Generator'];
+const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator'];
 tools.sort()
 
 function search(str) {
@@ -100,6 +103,8 @@ function useSuggestion(e) {
         CSSBackgroundImageGenerator();
     } else if (e.target.innerText == 'HTML Button Generator') {
         HTMLButtonGenerator();
+    } else if (e.target.innerText == 'CSS Box Shadow Generator') {
+        CSSBoxShadowGenerator();
     }
 
 }
@@ -112,5 +117,8 @@ input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
 
 
-// HTML Button Generator
+// CSS Box Shadow Generator
+
+
+
 
