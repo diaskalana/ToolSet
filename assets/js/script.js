@@ -1,6 +1,7 @@
 import { CSSBackgroundImageGenerator } from "./CSSBackgroundImageGenerator.js";
 import { HTMLButtonGenerator } from "./HTMLButtonGenerator.js";
 import { CSSBoxShadowGenerator } from "./CSSBoxShadowGenerator.js";
+import { CSSGradientGenerator } from "./CSSGradientGenerator.js";
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -23,6 +24,8 @@ document.onclick = function (event) {
         HTMLButtonGenerator();
     } else if (event.target.classList.contains('CSSBoxShadowGenerator')) {
         CSSBoxShadowGenerator();
+    } else if (event.target.classList.contains('CSSGradientGenerator')) {
+        CSSGradientGenerator();
     }
 }
 
@@ -42,7 +45,7 @@ window.onclick = function (event) {
 const input = document.querySelector('#search');
 const suggestions = document.querySelector('.searchSuggestions ul');
 
-const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator'];
+const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator'];
 tools.sort()
 
 function search(str) {
@@ -105,6 +108,8 @@ function useSuggestion(e) {
         HTMLButtonGenerator();
     } else if (e.target.innerText == 'CSS Box Shadow Generator') {
         CSSBoxShadowGenerator();
+    } else if (e.target.innerText == 'CSS Gradient Generator') {
+        CSSGradientGenerator();
     }
 
 }
@@ -117,7 +122,7 @@ input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
 
 
-// CSS Box Shadow Generator
+// CSS Gradient Generator
 
 
 
