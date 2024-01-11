@@ -2,6 +2,7 @@ import { CSSBackgroundImageGenerator } from "./CSSBackgroundImageGenerator.js";
 import { HTMLButtonGenerator } from "./HTMLButtonGenerator.js";
 import { CSSBoxShadowGenerator } from "./CSSBoxShadowGenerator.js";
 import { CSSGradientGenerator } from "./CSSGradientGenerator.js";
+import { HTMLTableGenerator } from "./HTMLTableGenerator.js";
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -26,6 +27,8 @@ document.onclick = function (event) {
         CSSBoxShadowGenerator();
     } else if (event.target.classList.contains('CSSGradientGenerator')) {
         CSSGradientGenerator();
+    } else if (event.target.classList.contains('HTMLTableGenerator')) {
+        HTMLTableGenerator();
     }
 }
 
@@ -45,7 +48,7 @@ window.onclick = function (event) {
 const input = document.querySelector('#search');
 const suggestions = document.querySelector('.searchSuggestions ul');
 
-const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator'];
+const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator'];
 tools.sort()
 
 function search(str) {
@@ -110,6 +113,8 @@ function useSuggestion(e) {
         CSSBoxShadowGenerator();
     } else if (e.target.innerText == 'CSS Gradient Generator') {
         CSSGradientGenerator();
+    } else if (e.target.innerText == 'HTML Table Generator') {
+        HTMLTableGenerator();
     }
 
 }
@@ -122,7 +127,14 @@ input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
 
 
-// CSS Gradient Generator
+// HTML Table Generator
+
+
+
+
+
+
+
 
 
 

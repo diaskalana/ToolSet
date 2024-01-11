@@ -24,6 +24,19 @@ select {
 .modalTarget input:focus {
   outline: none;
 }
+.modalControlsSubContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.modalControlsSubContainer label {
+  width: 100%;
+  /* font-size: 0.85rem; */
+}
+.modalControlsSubContainer p {
+  height: 5px;
+  margin: 0;
+}
 
 /* CSS Background Image Generator */
 .bgImageGenerator {
@@ -55,6 +68,12 @@ select {
 .bgImageGeneratorCode {
   border: 2px solid black;
   padding: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
   /* height: 50px; */
 }
 .bgImageGeneratorBtns {
@@ -120,6 +139,12 @@ select {
   border: 2px solid black;
   padding: 10px;
   overflow-y: scroll;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 .htmlBtnGeneratorBtns {
   display: flex;
@@ -165,6 +190,12 @@ select {
 .boxShadowGeneratorCode {
   border: 2px solid black;
   padding: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
   /* height: 50px; */
 }
 .boxShadowGeneratorBtns {
@@ -201,6 +232,12 @@ select {
 .cssGradientGeneratorCode {
   border: 2px solid black;
   padding: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
   /* height: 50px; */
 }
 .cssGradientGeneratorBtns {
@@ -210,4 +247,75 @@ select {
 }
 .cssGradientGeneratorBtns > button {
   padding: 5px 20px;
+}
+
+/* HTML Table Generator */
+.htmlTableGenerator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.htmlTableGeneratorControls {
+  width: 400px;
+}
+
+.htmlTableGeneratorOutput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+}
+.htmlTableGeneratorPreview {
+  aspect-ratio: 16 / 9;
+  background-color: #faebd7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 20px; */
+}
+.htmlTableGeneratorPreview p {
+  font-size: 0.8rem;
+}
+.htmlTableGeneratorCode {
+  border: 2px solid black;
+  padding: 10px;
+  height: 100px;
+  margin-bottom: 20px;
+  overflow: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.htmlTableGeneratorBtns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.htmlTableGeneratorBtns > button {
+  padding: 5px 20px;
+}
+
+.htmlTableGeneratorPreview table {
+  border: 1px solid #b3adad;
+  border-collapse: collapse;
+  padding: 5px;
+}
+.htmlTableGeneratorPreview table th {
+  border: 1px solid #b3adad;
+  padding: 5px;
+  background: #f0f0f0;
+  color: #313030;
+}
+.htmlTableGeneratorPreview table td {
+  border: 1px solid #b3adad;
+  text-align: center;
+  padding: 5px;
+  background: #ffffff;
+  color: #313030;
 }

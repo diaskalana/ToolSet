@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box;
 }
+*:focus {
+  outline: none;
+}
 body {
   padding: 0;
   margin: 0;
@@ -217,7 +220,7 @@ footer {
   /* position: relative; */
 }
 .modalContent h4 {
-  margin: 10px 0 20px 0;
+  margin: 20px 0 20px 0;
 }
 .modalHeader {
   display: flex;

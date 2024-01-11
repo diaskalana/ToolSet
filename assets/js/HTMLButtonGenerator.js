@@ -166,36 +166,38 @@ export function HTMLButtonGenerator() {
     })
 
     function hbgUpdateCode() {
-        hbgCode.textContent = `<!DOCTYPE html>
-    <html>
-    <head>
-        <title>HTML Button Generator</title>
-        <style>
-            button {
-                color: ${hbgBtnTextColor.value};
-                background-color: ${hbgBtnBackgroundColor.value};
-                font-size: ${hbgBtnFontSize.value}px;
-                border: ${hbgBtnBorderSize.value}px solid ${hbgBtnBorderColor.value};
-                border-radius:${hbgBtnBorderRadius.value}px;
-                padding: ${hbgButtonPadding.value};
-                margin:${hbgButtonMargin.value};
-                cursor: pointer
-            }
-            button:hover {
-                color: ${hbgBtnHoverTextColor.value};
-                background-color: ${hbgBtnHoverBackgroundColor.value};
-                font-size: ${hbgBtnHoverFontSize.value}px;
-                border: ${hbgBtnHoverBorderSize.value}px solid ${hbgBtnHoverBorderColor.value};
-                border-radius:${hbgBtnHoverBorderRadius.value}px;
-                padding: ${hbgButtonHoverPadding.value};
-                margin:${hbgButtonHoverMargin.value};
-            }
-        </style>
-    </head>
-    <body>
-        <button type="${hbgButtonType.value}" ${hbgAutofocus.checked ? 'autofocus' : ''} ${hbgDisabled.checked ? 'disabled' : ''} name="${hbgButtonName.value}">${hbgButtonText.value}</button>
-    </body>
-    </html>`
+        hbgCode.textContent =
+            `<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Button Generator</title>
+    <style>
+        button {
+            color: ${hbgBtnTextColor.value};
+            background-color: ${hbgBtnBackgroundColor.value};
+            font-size: ${hbgBtnFontSize.value}px;
+            border: ${hbgBtnBorderSize.value}px solid ${hbgBtnBorderColor.value};
+            border-radius:${hbgBtnBorderRadius.value}px;
+            padding: ${hbgButtonPadding.value};
+            margin:${hbgButtonMargin.value};
+            cursor: pointer
+        }
+        button:hover {
+            color: ${hbgBtnHoverTextColor.value};
+            background-color: ${hbgBtnHoverBackgroundColor.value};
+            font-size: ${hbgBtnHoverFontSize.value}px;
+            border: ${hbgBtnHoverBorderSize.value}px solid ${hbgBtnHoverBorderColor.value};
+            border-radius:${hbgBtnHoverBorderRadius.value}px;
+            padding: ${hbgButtonHoverPadding.value};
+            margin:${hbgButtonHoverMargin.value};
+        }
+    </style>
+</head>
+<body>
+    <button type="${hbgButtonType.value}" ${hbgAutofocus.checked ? 'autofocus' : ''} ${hbgDisabled.checked ? 'disabled' : ''} name="${hbgButtonName.value}">${hbgButtonText.value}</button>
+</body>
+</html>`
+
     }
 
     function hbgResetFunc() {
@@ -294,6 +296,7 @@ export function HTMLButtonGenerator() {
         hbgPreview.addEventListener('mouseout', () => {
             hbgPreview.style.margin = hbgMargin
         })
+
 
         hbgUpdateCode()
     }
