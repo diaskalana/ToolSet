@@ -175,9 +175,9 @@ export function HTMLButtonGenerator() {
         button {
             color: ${hbgBtnTextColor.value};
             background-color: ${hbgBtnBackgroundColor.value};
-            font-size: ${hbgBtnFontSize.value}px;
-            border: ${hbgBtnBorderSize.value}px solid ${hbgBtnBorderColor.value};
-            border-radius:${hbgBtnBorderRadius.value}px;
+            font-size: ${hbgBtnFontSize.value}${(hbgBtnFontSize.value != '') ? 'px;' : ';'}
+            border: ${hbgBtnBorderSize.value}${(hbgBtnBorderSize.value != '') ? 'px' : ''} solid ${hbgBtnBorderColor.value};
+            border-radius:${hbgBtnBorderRadius.value}${(hbgBtnBorderRadius.value != '') ? 'px;' : ';'}
             padding: ${hbgButtonPadding.value};
             margin:${hbgButtonMargin.value};
             cursor: pointer
@@ -185,9 +185,9 @@ export function HTMLButtonGenerator() {
         button:hover {
             color: ${hbgBtnHoverTextColor.value};
             background-color: ${hbgBtnHoverBackgroundColor.value};
-            font-size: ${hbgBtnHoverFontSize.value}px;
-            border: ${hbgBtnHoverBorderSize.value}px solid ${hbgBtnHoverBorderColor.value};
-            border-radius:${hbgBtnHoverBorderRadius.value}px;
+            font-size: ${hbgBtnHoverFontSize.value}${(hbgBtnHoverFontSize.value != '') ? 'px;' : ';'}
+            border: ${hbgBtnHoverBorderSize.value}${(hbgBtnHoverBorderSize.value != '') ? 'px' : ''} solid ${hbgBtnHoverBorderColor.value};
+            border-radius:${hbgBtnHoverBorderRadius.value}${(hbgBtnHoverBorderRadius.value != '') ? 'px;' : ';'}
             padding: ${hbgButtonHoverPadding.value};
             margin:${hbgButtonHoverMargin.value};
         }

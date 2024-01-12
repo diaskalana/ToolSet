@@ -31,7 +31,7 @@ export function CSSBoxShadowGenerator() {
     })
 
     function cbsUpdateCode() {
-        boxShadowGeneratorCode.textContent = `box-shadow: ${cbsHorizontalOffset.value}px ${cbsVerticalOffset.value}px ${cbsBlur.value}px ${cbsSpread.value}px ${cbsShadowColor.value} ${cbsInset.value == 'yes' ? 'inset' : ''};`
+        boxShadowGeneratorCode.textContent = `box-shadow: ${cbsHorizontalOffset.value}${(cbsHorizontalOffset.value != '') ? 'px' : ''} ${cbsVerticalOffset.value}${(cbsVerticalOffset.value != '') ? 'px' : ''} ${cbsBlur.value}${(cbsBlur.value != '') ? 'px' : ''} ${cbsSpread.value}${(cbsSpread.value != '') ? 'px' : ''} ${cbsShadowColor.value} ${cbsInset.value == 'yes' ? 'inset' : ''};`
     }
     function cbsResetFunc() {
         modalTitle.textContent = 'CSS Box Shadow Generator'

@@ -51,20 +51,20 @@ export function HTMLTableGenerator() {
         const htgTableTh = document.querySelectorAll('.htmlTableGeneratorPreview table th')
         const htgTableTd = document.querySelectorAll('.htmlTableGeneratorPreview table td')
 
-        htgTable.style.border = `${htgBorderWidth.value}px ${htgBorderStyle.value} ${htgBorderColor.value}`
+        htgTable.style.border = `${htgBorderWidth.value}${(htgBorderWidth.value != '') ? 'px' : ''} ${htgBorderStyle.value} ${htgBorderColor.value}`
         htgTable.style.borderCollapse = htgBorderCollapse.value
         htgTable.style.borderSpacing = `${htgBorderSpacing.value}px`
         htgTable.style.padding = `${htgPadding.value}px`
 
         htgTableTh.forEach((i) => {
-            i.setAttribute('style', `border: ${htgBorderWidth.value}px ${htgBorderStyle.value} ${htgBorderColor.value};
-        padding: ${htgPadding.value}px;
+            i.setAttribute('style', `border: ${htgBorderWidth.value}${(htgBorderWidth.value != '') ? 'px' : ''} ${htgBorderStyle.value} ${htgBorderColor.value};
+        padding: ${htgPadding.value}${(htgPadding.value != '') ? 'px;' : ';'}
         background: ${htgHeaderBackgroundColor.value};
         color: ${htgHeaderFontColor.value};`)
         })
         htgTableTd.forEach((i) => {
-            i.setAttribute('style', `border: ${htgBorderWidth.value}px ${htgBorderStyle.value} ${htgBorderColor.value};
-        padding: ${htgPadding.value}px;
+            i.setAttribute('style', `border: ${htgBorderWidth.value}${(htgBorderWidth.value != '') ? 'px' : ''} ${htgBorderStyle.value} ${htgBorderColor.value};
+        padding: ${htgPadding.value}${(htgPadding.value != '') ? 'px;' : ';'}
         text-align: ${htgTextAlign.value};
         background: ${htgBodyBackgroundColor.value};
         color: ${htgBodyFontColor.value};`)
@@ -79,21 +79,21 @@ export function HTMLTableGenerator() {
     <title>HTML Table Generator</title> 
     <style>
         table {
-            border:${htgBorderWidth.value}px ${htgBorderStyle.value} ${htgBorderColor.value};
+            border: ${htgBorderWidth.value}${(htgBorderWidth.value != '') ? 'px' : ''} ${htgBorderStyle.value} ${htgBorderColor.value};
             border-collapse: ${htgBorderCollapse.value};
-            border-spacing: ${htgBorderSpacing.value}px;
-            padding: ${htgPadding.value}px;
+            border-spacing: ${htgBorderSpacing.value}${(htgBorderSpacing.value != '') ? 'px;' : ';'}
+            padding: ${htgPadding.value}${(htgPadding.value != '') ? 'px;' : ';'}
         }
         table th {
-            border:${htgBorderWidth.value}px ${htgBorderStyle.value} ${htgBorderColor.value};
-            padding: ${htgPadding.value}px;
+            border: ${htgBorderWidth.value}${(htgBorderWidth.value != '') ? 'px' : ''} ${htgBorderStyle.value} ${htgBorderColor.value};
+            padding: ${htgPadding.value}${(htgPadding.value != '') ? 'px;' : ';'}
             background: ${htgHeaderBackgroundColor.value};
             color: ${htgHeaderFontColor.value};
         }
         table td {
-            border:${htgBorderWidth.value}px ${htgBorderStyle.value} ${htgBorderColor.value};
-            text-align:center;
-            padding: ${htgPadding.value}px;
+            border: ${htgBorderWidth.value}${(htgBorderWidth.value != '') ? 'px' : ''} ${htgBorderStyle.value} ${htgBorderColor.value};
+            text-align: ${htgTextAlign.value};
+            padding: ${htgPadding.value}${(htgPadding.value != '') ? 'px;' : ';'}
             background: ${htgBodyBackgroundColor.value};
             color: ${htgBodyFontColor.value};
         }

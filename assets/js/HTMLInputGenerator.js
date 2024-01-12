@@ -192,12 +192,12 @@ export function HTMLInputGenerator() {
             if (higTypeSearchAutocomplete.checked == true) {
                 higInput.setAttribute('autocomplete', 'on')
             } else {
-                higInput.removeAttribute('autocomplete')
+                higInput.setAttribute('autocomplete', 'off')
             }
             if (higTypeSearchSpellcheck.checked == true) {
                 higInput.setAttribute('spellcheck', 'true')
             } else {
-                higInput.removeAttribute('spellcheck')
+                higInput.setAttribute('spellcheck', 'false')
             }
 
         } else if (higType.value == 'submit') {
@@ -229,7 +229,7 @@ export function HTMLInputGenerator() {
             if (higTypeTextSpellcheck.checked == true) {
                 higInput.setAttribute('spellcheck', 'true')
             } else {
-                higInput.removeAttribute('spellcheck')
+                higInput.setAttribute('spellcheck', 'false')
             }
             if (higTypeTextRequired.checked == true) {
                 higInput.setAttribute('required', '')
@@ -304,6 +304,8 @@ export function HTMLInputGenerator() {
     function higResetFunc() {
         modalTitle.textContent = 'HTML Input Generator'
         modalDescription.textContent = 'HTML input generator simplifies the creation of input elements for web forms. You can customize attributes like type, name, and placeholder, and the tool instantly generates the corresponding HTML code. This saves time and effort compared to manual coding.'
+
+        higInput.value = ''
 
         higName.value = 'inputField'
         higClassName.value = 'inputClass'
@@ -392,6 +394,7 @@ export function HTMLInputGenerator() {
         while (higInput.attributes.length > 0) {
             higInput.removeAttribute(higInput.attributes[0].name);
         }
+        higInput.value = ''
         updateProperties()
     })
 }
