@@ -4,6 +4,7 @@ import { CSSBoxShadowGenerator } from "./CSSBoxShadowGenerator.js";
 import { CSSGradientGenerator } from "./CSSGradientGenerator.js";
 import { HTMLTableGenerator } from "./HTMLTableGenerator.js";
 import { HTMLInputGenerator } from "./HTMLInputGenerator.js";
+import { CSSFlexboxGenerator } from "./CSSFlexboxGenerator.js";
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -32,6 +33,8 @@ document.onclick = function (event) {
         HTMLTableGenerator();
     } else if (event.target.classList.contains('HTMLInputGenerator')) {
         HTMLInputGenerator();
+    } else if (event.target.classList.contains('CSSFlexboxGenerator')) {
+        CSSFlexboxGenerator();
     }
 
 }
@@ -52,7 +55,7 @@ window.onclick = function (event) {
 const input = document.querySelector('#search');
 const suggestions = document.querySelector('.searchSuggestions ul');
 
-const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator', 'HTML Input Generator'];
+const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator', 'HTML Input Generator', 'CSS Flexbox Generator'];
 tools.sort()
 
 function search(str) {
@@ -121,6 +124,8 @@ function useSuggestion(e) {
         HTMLTableGenerator();
     } else if (e.target.innerText == 'HTML Input Generator') {
         HTMLInputGenerator();
+    } else if (e.target.innerText == 'CSS Flexbox Generator') {
+        CSSFlexboxGenerator();
     }
 
 }
@@ -133,11 +138,7 @@ input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
 
 
-// HTML Input Generator
-
-
-
-
+// CSS Flexbox Generator
 
 
 

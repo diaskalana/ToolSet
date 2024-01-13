@@ -59,6 +59,7 @@ select {
   /* border: 2px solid #faebd7; */
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
+  border: 2px solid black;
   background-image: url("../images/bgDummy.jpg");
   background-position: center;
   background-size: cover;
@@ -126,6 +127,7 @@ select {
   width: 240px;
   height: 80px;
   background-color: #faebd7;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,6 +179,7 @@ select {
 .boxShadowGeneratorPreview {
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,6 +231,7 @@ select {
 .cssGradientGeneratorPreview {
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
+  border: 2px solid black;
 }
 .cssGradientGeneratorCode {
   border: 2px solid black;
@@ -270,6 +274,8 @@ select {
 .htmlTableGeneratorPreview {
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
+  border: 2px solid black;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -343,6 +349,7 @@ select {
 .htmlInputGeneratorPreview {
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -397,4 +404,70 @@ select {
 }
 .higTypeSelections {
   display: none;
+}
+
+/* CSS Flexbox Generator */
+.cssFlexGenerator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.cssFlexGeneratorControls {
+  width: 300px;
+}
+
+.cssFlexGeneratorOutput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cssFlexGeneratorPreview {
+  /* border: 2px solid #faebd7; */
+  aspect-ratio: 16 / 9;
+  background-color: #faebd7;
+  border: 2px solid black;
+  position: relative;
+}
+.cssFlexGeneratorInsideDivs {
+  display: flex;
+  height: 100%;
+}
+.cssFlexGeneratorPreview div {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border: 2px solid black;
+}
+.cssFlexGeneratorCtrlBtns {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.cssFlexGeneratorCode {
+  border: 2px solid black;
+  padding: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  height: 100px;
+}
+.cssFlexGeneratorBtns,
+.cssFlexGeneratorCtrlBtns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.cssFlexGeneratorBtns > button,
+.cssFlexGeneratorCtrlBtns > button {
+  padding: 5px 20px;
+}
+.cssFlexGeneratorCtrlBtns > button {
+  font-size: 0.8rem;
+  padding: 2px 10px;
+  border-radius: 3px;
 }
