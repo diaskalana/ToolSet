@@ -138,6 +138,37 @@ input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
 
 
+// Dark mode controls
+const outerContainer = document.querySelector(".outer-container");
+const container = document.querySelector(".container");
+const logo = document.querySelector('#logo')
+
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    outerContainer.classList.remove('light')
+} else {
+    outerContainer.classList.add('light')
+}
+changeTheme()
+
+
+
+container.addEventListener("click", () => {
+    outerContainer.classList.toggle("light");
+    changeTheme()
+
+});
+
+function changeTheme() {
+    if (outerContainer.classList.contains('light')) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        logo.setAttribute('src', './assets/images/logo.png')
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        logo.setAttribute('src', './assets/images/logo_dark.png')
+    }
+}
+
+
 // CSS Flexbox Generator
 
 

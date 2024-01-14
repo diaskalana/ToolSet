@@ -4,8 +4,11 @@ select {
   width: 100%;
   height: 30px;
   padding: 5px;
-  border: solid black 2px;
+  border: solid var(--border-color) 2px;
   border-radius: 5px;
+}
+select option {
+  background: var(--bg-color);
 }
 
 .modalTarget input[type="color"] {
@@ -58,8 +61,8 @@ select {
 .bgImageGeneratorPreview {
   /* border: 2px solid #faebd7; */
   aspect-ratio: 16 / 9;
-  background-color: #faebd7;
-  border: 2px solid black;
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
   background-image: url("../images/bgDummy.jpg");
   background-position: center;
   background-size: cover;
@@ -67,7 +70,7 @@ select {
   background-clip: border-box;
 }
 .bgImageGeneratorCode {
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   padding: 10px;
   overflow-x: auto;
   white-space: pre-wrap;
@@ -127,7 +130,7 @@ select {
   width: 240px;
   height: 80px;
   background-color: #faebd7;
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,7 +141,7 @@ select {
 }
 .htmlBtnGeneratorCode {
   height: 80px;
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   padding: 10px;
   overflow-y: scroll;
   overflow-x: auto;
@@ -179,7 +182,7 @@ select {
 .boxShadowGeneratorPreview {
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,7 +194,7 @@ select {
   background-color: white;
 }
 .boxShadowGeneratorCode {
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   padding: 10px;
   overflow-x: auto;
   white-space: pre-wrap;
@@ -231,10 +234,10 @@ select {
 .cssGradientGeneratorPreview {
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
 }
 .cssGradientGeneratorCode {
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   padding: 10px;
   overflow-x: auto;
   white-space: pre-wrap;
@@ -274,7 +277,7 @@ select {
 .htmlTableGeneratorPreview {
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
 
   display: flex;
   flex-direction: column;
@@ -286,7 +289,7 @@ select {
   font-size: 0.8rem;
 }
 .htmlTableGeneratorCode {
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   padding: 10px;
   height: 100px;
   margin-bottom: 20px;
@@ -349,7 +352,7 @@ select {
 .htmlInputGeneratorPreview {
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -361,7 +364,7 @@ select {
   all: revert;
 }
 .htmlInputGeneratorCode {
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   padding: 10px;
   height: 100px;
   overflow: auto;
@@ -427,7 +430,7 @@ select {
   /* border: 2px solid #faebd7; */
   aspect-ratio: 16 / 9;
   background-color: #faebd7;
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   position: relative;
 }
 .cssFlexGeneratorInsideDivs {
@@ -446,7 +449,7 @@ select {
   left: 20px;
 }
 .cssFlexGeneratorCode {
-  border: 2px solid black;
+  border: 2px solid var(--border-color);
   padding: 10px;
   overflow-x: auto;
   white-space: pre-wrap;
@@ -470,4 +473,12 @@ select {
   font-size: 0.8rem;
   padding: 2px 10px;
   border-radius: 3px;
+}
+.cssFlexGeneratorCtrlBtns > button {
+  color: black;
+  border: solid black 2px;
+}
+.cssFlexGeneratorCtrlBtns > button:hover {
+  background-color: black;
+  color: white;
 }
