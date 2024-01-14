@@ -117,6 +117,9 @@ export function CSSFlexboxGenerator() {
             count++;
         } else if (e.target.id == 'cssFlexGeneratorDelDiv') {
             count--;
+            if (count < 0) {
+                count = 0;
+            }
         }
         updateDivCount(count)
         updateStyle()
