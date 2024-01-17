@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/tools.css" />
     <script type="module" src="./assets/js/script.js" defer></script>
+    <!-- Highlight.js styles -->
+    <link
+      id="cigStylesheet"
+      rel="stylesheet"
+      href="node_modules\highlight.js\styles\a11y-light.css"
+    />
   </head>
   <body>
     <div class="mainContainer">
@@ -81,39 +87,45 @@
       <div class="toolSection">
         <h2>Popular Tools</h2>
         <hr />
-        <button class="toolItem CSSBackgroundImageGenerator">
-          CSS Background Image Generator
-        </button>
-        <button class="toolItem">Tool Item</button>
-        <button class="toolItem">Tool Item</button>
-        <button class="toolItem">Tool Item</button>
+        <div class="toolContainer">
+          <button class="toolItem CSSBackgroundImageGenerator">
+            CSS Background Image Generator
+          </button>
+          <button class="toolItem">Tool Item</button>
+          <button class="toolItem">Tool Item</button>
+          <button class="toolItem">Tool Item</button>
+        </div>
       </div>
 
       <div class="toolSection">
         <h2>New Tools</h2>
         <hr />
-        <button class="toolItem CSSBackgroundImageGenerator">
-          CSS Background Image Generator
-        </button>
-        <button class="toolItem HTMLButtonGenerator">
-          HTML Button Generator
-        </button>
-        <button class="toolItem CSSBoxShadowGenerator">
-          CSS Box Shadow Generator
-        </button>
-        <button class="toolItem CSSGradientGenerator">
-          CSS Gradient Generator
-        </button>
-        <button class="toolItem HTMLTableGenerator">
-          HTML Table Generator
-        </button>
-        <button class="toolItem HTMLInputGenerator">
-          HTML Input Generator
-        </button>
-        <button class="toolItem CSSFlexboxGenerator">
-          CSS Flexbox Generator
-        </button>
-        <button class="toolItem">Tool Item</button>
+        <div class="toolContainer">
+          <button class="toolItem CSSBackgroundImageGenerator">
+            CSS Background Image Generator
+          </button>
+          <button class="toolItem HTMLButtonGenerator">
+            HTML Button Generator
+          </button>
+          <button class="toolItem CSSBoxShadowGenerator">
+            CSS Box Shadow Generator
+          </button>
+          <button class="toolItem CSSGradientGenerator">
+            CSS Gradient Generator
+          </button>
+          <button class="toolItem HTMLTableGenerator">
+            HTML Table Generator
+          </button>
+          <button class="toolItem HTMLInputGenerator">
+            HTML Input Generator
+          </button>
+          <button class="toolItem CSSFlexboxGenerator">
+            CSS Flexbox Generator
+          </button>
+          <button class="toolItem codeImageGenerator">
+            Code Image Generator
+          </button>
+        </div>
       </div>
       <footer>
         <p>Made with 🖤</p>

@@ -5,6 +5,7 @@ import { CSSGradientGenerator } from "./CSSGradientGenerator.js";
 import { HTMLTableGenerator } from "./HTMLTableGenerator.js";
 import { HTMLInputGenerator } from "./HTMLInputGenerator.js";
 import { CSSFlexboxGenerator } from "./CSSFlexboxGenerator.js";
+import { codeImageGenerator } from "./CodeImageGenerator.js";
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -16,7 +17,7 @@ const modal = document.querySelector(".modal");
 const closeBtn = document.querySelector(".close");
 
 // When the user clicks on the button, open the modal
-document.onclick = function (event) {
+document.querySelector('.mainContainer').onclick = function (event) {
     if (event.target.classList.contains('toolItem')) {
         modal.style.display = "flex";
     }
@@ -35,6 +36,8 @@ document.onclick = function (event) {
         HTMLInputGenerator();
     } else if (event.target.classList.contains('CSSFlexboxGenerator')) {
         CSSFlexboxGenerator();
+    } else if (event.target.classList.contains('codeImageGenerator')) {
+        codeImageGenerator();
     }
 
 }
@@ -55,7 +58,7 @@ window.onclick = function (event) {
 const input = document.querySelector('#search');
 const suggestions = document.querySelector('.searchSuggestions ul');
 
-const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator', 'HTML Input Generator', 'CSS Flexbox Generator'];
+const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator', 'HTML Input Generator', 'CSS Flexbox Generator', 'Code Image Generator'];
 tools.sort()
 
 function search(str) {
@@ -126,8 +129,9 @@ function useSuggestion(e) {
         HTMLInputGenerator();
     } else if (e.target.innerText == 'CSS Flexbox Generator') {
         CSSFlexboxGenerator();
+    } else if (e.target.innerText == 'Code Image Generator') {
+        codeImageGenerator();
     }
-
 }
 
 document.addEventListener("click", function (e) {
@@ -143,13 +147,16 @@ const outerContainer = document.querySelector(".outer-container");
 const container = document.querySelector(".container");
 const logo = document.querySelector('#logo')
 
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    outerContainer.classList.remove('light')
-} else {
-    outerContainer.classList.add('light')
-}
-changeTheme()
+changeLogo()
+function changeLogo() {
+    if (outerContainer.classList.contains('light')) {
+        logo.setAttribute('src', './assets/images/logo.png')
 
+    } else {
+        logo.setAttribute('src', './assets/images/logo_dark.png')
+
+    }
+}
 
 
 container.addEventListener("click", () => {
@@ -162,14 +169,43 @@ function changeTheme() {
     if (outerContainer.classList.contains('light')) {
         document.documentElement.setAttribute('data-theme', 'light');
         logo.setAttribute('src', './assets/images/logo.png')
+        localStorage.setItem('theme', 'light');
+
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         logo.setAttribute('src', './assets/images/logo_dark.png')
+        localStorage.setItem('theme', 'dark');
+
     }
 }
 
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
-// CSS Flexbox Generator
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        outerContainer.classList.toggle("light");
+        changeTheme()
+    }
+} else {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        outerContainer.classList.remove('light')
+    } else {
+        outerContainer.classList.add('light')
+    }
+    changeLogo()
+
+}
+
+
+// Code Image Generator
+
+
+
+
+
+
 
 
 

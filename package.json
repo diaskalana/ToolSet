@@ -10,5 +10,11 @@
   },
   "devDependencies": {
     "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "autosize": "^6.0.1",
+    "downloadjs": "^1.4.7",
+    "highlight.js": "^11.9.0",
+    "html-to-image": "^1.11.11"
   }
 }
