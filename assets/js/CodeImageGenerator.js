@@ -97,6 +97,7 @@ export function codeImageGenerator() {
 
         cigHeader.style.backgroundColor = cigWindowsColor.value
         codeImageGeneratorCode.style.backgroundColor = cigWindowsColor.value
+        codeImageGeneratorImage.style.backgroundColor = cigWindowsColor.value
 
 
         codeImageGeneratorCode.textContent = `${cigText.value}`

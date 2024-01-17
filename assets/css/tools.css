@@ -644,3 +644,38 @@ select {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
 }
+
+/* Base converter and calculator */
+.baseConAndCal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.baseConAndCalControls {
+  width: 100%;
+  padding: 20px;
+  border: var(--border-color) solid 2px;
+  border-radius: 5px;
+}
+.baseConAndCalControls > h4 {
+  margin-top: 10px;
+}
+.baseConAndCalBtnCtrl {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 10px 0;
+}
+.baseConAndCalBtnCtrl > button {
+  padding: 5px 20px;
+}
+.baseConAndCalControls > textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  resize: vertical;
+  border: var(--border-color) solid 2px;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--border-color);
+}
