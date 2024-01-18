@@ -15,7 +15,6 @@
     "autosize": "^6.0.1",
     "downloadjs": "^1.4.7",
     "highlight.js": "^11.9.0",
-    "html-to-image": "^1.11.11",
-    "simple-base-converter": "^1.0.19"
+    "html-to-image": "^1.11.11"
   }
 }
