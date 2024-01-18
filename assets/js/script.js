@@ -193,8 +193,9 @@ if (currentTheme) {
 
     if (currentTheme === 'dark') {
         outerContainer.classList.toggle("light");
-        changeTheme()
     }
+    changeTheme()
+
 } else {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         outerContainer.classList.remove('light')
@@ -202,12 +203,12 @@ if (currentTheme) {
         outerContainer.classList.add('light')
     }
     changeLogo()
+    changeTheme()
 
 }
 
 
 // Base Converter and Calculator
-
 
 
 
