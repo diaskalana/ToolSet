@@ -645,37 +645,60 @@ select {
   word-wrap: break-word;
 }
 
-/* Base converter and calculator */
-.baseConAndCal {
+/* Chart Generator */
+.chartGenerator {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
 }
-.baseConAndCalControls {
+.chartGeneratorControls {
+  width: 300px;
+}
+
+.chartGeneratorOutput {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.chartGeneratorPreview {
+  /* border: 2px solid #faebd7; */
+  aspect-ratio: 4 / 3;
+  background-color: #ffffff;
+  /* border: 2px solid var(--border-color); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  border: var(--border-color) solid 2px;
-  border-radius: 5px;
 }
-.baseConAndCalControls > h4 {
-  margin-top: 10px;
+.cGenCheckboxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.baseConAndCalBtnCtrl {
+.cGenCheckboxes input {
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  display: inline-block;
+}
+.cGenCheckboxes label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.chartGeneratorBtns {
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
-  margin: 10px 0;
+  gap: 20px;
 }
-.baseConAndCalBtnCtrl > button {
+.chartGeneratorBtns > button {
   padding: 5px 20px;
 }
-.baseConAndCalControls > textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  resize: vertical;
-  border: var(--border-color) solid 2px;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: var(--border-color);
+#cGenExportType {
+  padding: 5px 20px;
+  margin: 0;
+  height: 100%;
 }

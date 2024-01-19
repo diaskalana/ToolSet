@@ -6,6 +6,7 @@ import { HTMLTableGenerator } from "./HTMLTableGenerator.js";
 import { HTMLInputGenerator } from "./HTMLInputGenerator.js";
 import { CSSFlexboxGenerator } from "./CSSFlexboxGenerator.js";
 import { codeImageGenerator } from "./CodeImageGenerator.js";
+import { chartGenerator } from "./ChartGenerator.js";
 
 
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -39,6 +40,8 @@ document.querySelector('.mainContainer').onclick = function (event) {
         CSSFlexboxGenerator();
     } else if (event.target.classList.contains('codeImageGenerator')) {
         codeImageGenerator();
+    } else if (event.target.classList.contains('chartGenerator')) {
+        chartGenerator();
     }
 
 }
@@ -59,7 +62,7 @@ window.onclick = function (event) {
 const input = document.querySelector('#search');
 const suggestions = document.querySelector('.searchSuggestions ul');
 
-const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator', 'HTML Input Generator', 'CSS Flexbox Generator', 'Code Image Generator'];
+const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator', 'HTML Input Generator', 'CSS Flexbox Generator', 'Code Image Generator', 'Chart Generator'];
 tools.sort()
 
 function search(str) {
@@ -132,6 +135,8 @@ function useSuggestion(e) {
         CSSFlexboxGenerator();
     } else if (e.target.innerText == 'Code Image Generator') {
         codeImageGenerator();
+    } else if (e.target.innerText == 'Chart Generator') {
+        chartGenerator();
     }
 
 }
@@ -144,12 +149,6 @@ input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
 
 
-
-
-
-
-
-
-
+// Chart Generator
 
 
