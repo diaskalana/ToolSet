@@ -1,3 +1,5 @@
+import Toastify from 'toastify-js'
+
 export function HTMLButtonGenerator() {
 
     document.querySelector('.modalTarget').innerHTML = `<div class="htmlBtnGenerator"><div class="htmlBtnGeneratorControls"><h4>Basic Configuration</h4><label for="hbgButtonText">Button Text:</label><input type="text" id="hbgButtonText"><label for="hbgButtonType">Button Type:</label><select name="hbgButtonType" id="hbgButtonType"><option value="button">button</option><option value="reset">reset</option><option value="submit">submit</option></select><label for="hbgButtonName">Button Name:</label><input type="text" id="hbgButtonName"><div class="hbgCheckboxes"><label for="hbgAutofocus"><input type="checkbox" id="hbgAutofocus">Autofocus</label><label for="hbgDisabled"><input type="checkbox" id="hbgDisabled">Disabled</label></div><div class="htmlBtnGeneratorOutput"><div class="htmlBtnGeneratorPreview"><button>Click Me</button></div><code class="htmlBtnGeneratorCode"></code><div class="htmlBtnGeneratorBtns"><button id="htmlBtnGeneratorReset">Reset</button><button id="htmlBtnGeneratorCopyCode">Copy Code</button></div></div></div><div class="htmlBtnGeneratorControls"><h4>CSS Style Configuration</h4><label for="hbgBtnTextColor">Button Text Color:</label><input type="color" id="hbgBtnTextColor"><label for="hbgBtnBackgroundColor">Button Background Color:</label><input type="color" id="hbgBtnBackgroundColor"><label for="hbgBtnFontSize">Button Font Size (px):</label><input placeholder="Enter pixel value" type="number" id="hbgBtnFontSize"><label for="hbgBtnBorderSize">Button Border Size (px):</label><input placeholder="Enter pixel value" type="number" id="hbgBtnBorderSize"><label for="hbgBtnBorderColor">Button Border Color:</label><input type="color" id="hbgBtnBorderColor"><label for="hbgBtnBorderRadius">Button Border Radius (px):</label><input placeholder="Enter pixel value" type="number" id="hbgBtnBorderRadius"><label for="hbgButtonPadding">Button Padding (px):</label><input type="text" id="hbgButtonPadding"><label for="hbgButtonMargin">Button Margin (px):</label><input type="text" id="hbgButtonMargin"></div><div class="htmlBtnGeneratorControls"><h4>Hover Style Configuration</h4><label for="hbgBtnHoverTextColor">Button Text Color:</label><input type="color" id="hbgBtnHoverTextColor"><label for="hbgBtnHoverBackgroundColor">Button Background Color:</label><input type="color" id="hbgBtnHoverBackgroundColor"><label for="hbgBtnHoverFontSize">Button Font Size (px):</label><input placeholder="Enter pixel value" type="number" id="hbgBtnHoverFontSize"><label for="hbgBtnHoverBorderSize">Button Border Size (px):</label><input placeholder="Enter pixel value" type="number" id="hbgBtnHoverBorderSize"><label for="hbgBtnHoverBorderColor">Button Border Color:</label><input type="color" id="hbgBtnHoverBorderColor"><label for="hbgBtnHoverBorderRadius">Button Border Radius (px):</label><input placeholder="Enter pixel value" type="number" id="hbgBtnHoverBorderRadius"><label for="hbgButtonHoverPadding">Button Padding (px):</label><input type="text" id="hbgButtonHoverPadding"><label for="hbgButtonHoverMargin">Button Margin (px):</label><input type="text" id="hbgButtonHoverMargin"></div></div>`
@@ -41,7 +43,16 @@ export function HTMLButtonGenerator() {
     hbgBtnReset.addEventListener('click', hbgResetFunc)
     hbgBtnCopy.addEventListener('click', () => {
         navigator.clipboard.writeText(hbgCode.textContent);
-        alert("Code Copied!")
+        // alert("Code Copied!")
+        Toastify({
+            text: "📋 Code Copied!",
+            className: "info",
+            className: "notification",
+            offset: {
+                x: 20,
+                y: 20
+            },
+        }).showToast();
     })
 
     hbgResetFunc()

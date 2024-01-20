@@ -1,3 +1,5 @@
+import Toastify from 'toastify-js'
+
 export function CSSGradientGenerator() {
 
     document.querySelector('.modalTarget').innerHTML = `<div class="cssGradientGenerator"><div class="cssGradientGeneratorControls"><h4>CSS Style Configuration</h4><label for="cggPrimaryColor">Primary Color:</label><input type="color" id="cggPrimaryColor"><label for="cggSecondaryColor">Secondary Color:</label><input type="color" id="cggSecondaryColor"><label for="cggGradientType">Gradient Type:</label><select name="cggGradientType" id="cggGradientType"><option value="linear-gradient">Linear Gradient</option><option value="radial-gradient">Radial Gradient</option></select><label for="cggLinearGradientDirection">Direction:</label><select name="cggLinearGradientDirection" id="cggLinearGradientDirection"><option value="180deg">↓ Top to Bottom</option><option value="225deg">↙ Top-Right to Bottom-Left</option><option value="270deg">← Right to Left</option><option value="315deg">↖ Bottom-Right to Top-Left</option><option value="0deg">↑ Bottom to Top</option><option value="45deg">↗ Bottom-Left to Top-Right</option><option value="90deg">→ Left to Right</option><option value="135deg">↘ Top-Left to Bottom-Right</option></select><label for="cggRadialGradientDirection">Direction:</label><select name="cggRadialGradientDirection" id="cggRadialGradientDirection"><option value="center">Center</option><option value="top">Top</option><option value="right top">Top-Right</option><option value="right">Right</option><option value="right bottom">Bottom-Right</option><option value="bottom">Bottom</option><option value="left bottom">Bottom-Left</option><option value="left">Left</option><option value="left top">Top-Left</option></select></div><div class="cssGradientGeneratorOutput"><div class="cssGradientGeneratorPreview"></div><code class="cssGradientGeneratorCode"></code><div class="cssGradientGeneratorBtns"><button id="cssGradientGeneratorReset">Reset</button><button id="cssGradientGeneratorCopyCode">Copy Code</button></div></div></div>`
@@ -23,7 +25,16 @@ export function CSSGradientGenerator() {
     cssGradientGeneratorReset.addEventListener('click', cggResetFunc)
     cssGradientGeneratorCopyCode.addEventListener('click', () => {
         navigator.clipboard.writeText(cssGradientGeneratorCode.textContent);
-        alert("Code Copied!")
+        // alert("Code Copied!")
+        Toastify({
+            text: "📋 Code Copied!",
+            className: "info",
+            className: "notification",
+            offset: {
+                x: 20,
+                y: 20
+            },
+        }).showToast();
     })
 
     function cggUpdateOption() {

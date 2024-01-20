@@ -1,3 +1,4 @@
+import Toastify from 'toastify-js'
 
 export function CSSBackgroundImageGenerator() {
 
@@ -51,7 +52,16 @@ export function CSSBackgroundImageGenerator() {
     bigReset.addEventListener('click', bigResetFunc)
     bigCopy.addEventListener('click', () => {
         navigator.clipboard.writeText(bigCode.textContent);
-        alert("Code Copied!")
+        // alert("Code Copied!")
+        Toastify({
+            text: "📋 Code Copied!",
+            className: "info",
+            className: "notification",
+            offset: {
+                x: 20,
+                y: 20
+            },
+        }).showToast();
     })
 
     function bigResetFunc() {

@@ -8,6 +8,8 @@ import { CSSFlexboxGenerator } from "./CSSFlexboxGenerator.js";
 import { codeImageGenerator } from "./CodeImageGenerator.js";
 import { chartGenerator } from "./ChartGenerator.js";
 
+// Toastify css
+import "toastify-js/src/toastify.css"
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -148,7 +150,4 @@ document.addEventListener("click", function (e) {
 input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
 
-
-// Chart Generator
-
-
+// count API

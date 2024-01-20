@@ -16,6 +16,7 @@
     "chart.js": "^4.4.1",
     "downloadjs": "^1.4.7",
     "highlight.js": "^11.9.0",
-    "html-to-image": "^1.11.11"
+    "html-to-image": "^1.11.11",
+    "toastify-js": "^1.12.0"
   }
 }

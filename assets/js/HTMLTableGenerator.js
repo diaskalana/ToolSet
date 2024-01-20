@@ -1,3 +1,5 @@
+import Toastify from 'toastify-js'
+
 export function HTMLTableGenerator() {
 
     document.querySelector('.modalTarget').innerHTML = `<div class="htmlTableGenerator"><div class="htmlTableGeneratorControls"><h4>Basic Configuration</h4><div class="htmlTableGeneratorBasicControls"><label for="htgColumns">Columns:</label><input min="1" type="number" id="htgColumns"><label for="htgRows">Rows:</label><input min="1" type="number" id="htgRows"></div><h4>CSS Style Configuration</h4><label for="htgTextAlign">Text-Align:</label><select name="htgTextAlign" id="htgTextAlign"><option value="left">Left</option><option value="center">Center</option><option value="right">Right</option></select><label for="htgPadding">Padding  (px):</label><input placeholder="Enter pixel value" type="number" id="htgPadding"><label for="htgHeaderBackgroundColor">Header Background-Color:</label><input type="color" id="htgHeaderBackgroundColor"><label for="htgBodyBackgroundColor">Body Background-Color:</label><input type="color" id="htgBodyBackgroundColor"><label for="htgHeaderFontColor">Header Font-Color:</label><input type="color" id="htgHeaderFontColor"><label for="htgBodyFontColor">Body Font-Color:</label><input type="color" id="htgBodyFontColor"><label for="htgBorderColor">Border-Color:</label><input type="color" id="htgBorderColor"></div><div class="htmlTableGeneratorOutput"><div class="htmlTableGeneratorPreview"><table></table></div><h4>Border Style Configuration</h4><div class="modalControlsSubContainer"><label for="htgBorderCollapse">Border-Collapse:<br><p></p><select name="htgBorderCollapse" id="htgBorderCollapse"><option value="collapse">Collapse</option><option value="separate">Separate</option></select></label><label for="htgBorderSpacing">Border-Spacing (px):<br><p></p><input placeholder="Enter pixel value" type="number" id="htgBorderSpacing"></label></div><div class="modalControlsSubContainer"><label for="htgBorderStyle">Border-Style:<br><p></p><select name="htgBorderStyle" id="htgBorderStyle"><option value="none">none</option><option value="solid">solid</option><option value="dotted">dotted</option><option value="dashed">dashed</option><option value="double">double</option><option value="groove">groove</option><option value="ridge">ridge</option><option value="inset">inset</option><option value="outset">outset</option></select></label><label for="htgBorderWidth">Border-Width (px):<br><p></p><input placeholder="Enter pixel value" type="number" id="htgBorderWidth"></label></div><code class="htmlTableGeneratorCode"></code><div class="htmlTableGeneratorBtns"><button id="htmlTableGeneratorReset">Reset</button><button id="htmlTableGeneratorCopyCode">Copy Code</button></div></div></div>`
@@ -31,7 +33,16 @@ export function HTMLTableGenerator() {
     htmlTableGeneratorReset.addEventListener('click', htgResetFunc)
     htmlTableGeneratorCopyCode.addEventListener('click', () => {
         navigator.clipboard.writeText(htmlTableGeneratorCode.textContent);
-        alert("Code Copied!")
+        // alert("Code Copied!")
+        Toastify({
+            text: "📋 Code Copied!",
+            className: "info",
+            className: "notification",
+            offset: {
+                x: 20,
+                y: 20
+            },
+        }).showToast();
     })
 
 

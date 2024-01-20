@@ -1,3 +1,5 @@
+import Toastify from 'toastify-js'
+
 export function CSSFlexboxGenerator() {
 
     document.querySelector('.modalTarget').innerHTML = `<div class="cssFlexGenerator"><div class="cssFlexGeneratorControls"><h4>CSS Style Configuration</h4><label for="cfgHeightOfDivs">Height of divs (px):</label><input placeholder="Enter pixel value" id="cfgHeightOfDivs" type="number"><label for="cfgWidthOfDivs">Width of divs (px):</label><input placeholder="Enter pixel value" id="cfgWidthOfDivs" type="number"><label for="cfgMarginOfDivs">Margin of divs (px):</label><input placeholder="Enter pixel value" id="cfgMarginOfDivs" type="number"><label for="cfgFlexGap">Gap (px):</label><input placeholder="Enter pixel value" id="cfgFlexGap" type="number"><label for="cfgFlexWrap">flex-wrap:</label><select name="cfgFlexWrap" id="cfgFlexWrap"><option value="nowrap">nowrap</option><option value="wrap">wrap</option><option value="wrap-reverse">wrap-reverse</option></select><label for="cfgFlexDirection">flex-direction:</label><select name="cfgFlexDirection" id="cfgFlexDirection"><option value="row">row</option><option value="column">column</option><option value="row-reverse">row-reverse</option><option value="column-reverse">column-reverse</option></select><label for="cfgJustifyContent">justify-content:</label><select name="cfgJustifyContent" id="cfgJustifyContent"><option value="flex-start">flex-start</option><option value="flex-end">flex-end</option><option value="center">center</option><option value="space-evenly">space-evenly</option><option value="space-around">space-around</option><option value="space-between">space-between</option></select><label for="cfgAlignItems">align-items:</label><select name="cfgAlignItems" id="cfgAlignItems"><option value="flex-start">flex-start</option><option value="flex-end">flex-end</option><option value="center">center</option><option value="stretch">stretch</option><option value="baseline">baseline</option></select></div><div class="cssFlexGeneratorOutput"><div class="cssFlexGeneratorPreview"><section class="cssFlexGeneratorCtrlBtns"><button id="cssFlexGeneratorAddDiv">Add div</button><button id="cssFlexGeneratorDelDiv">Delete div</button></section><section class="cssFlexGeneratorInsideDivs"></section></div><code class="cssFlexGeneratorCode"></code><div class="cssFlexGeneratorBtns"><button id="cssFlexGeneratorReset">Reset</button><button id="cssFlexGeneratorCopyCode">Copy Code</button></div></div></div>`
@@ -29,7 +31,16 @@ export function CSSFlexboxGenerator() {
     cssFlexGeneratorReset.addEventListener('click', cfgResetFunc)
     cssFlexGeneratorCopyCode.addEventListener('click', () => {
         navigator.clipboard.writeText(cssFlexGeneratorCode.textContent);
-        alert("Code Copied!")
+        // alert("Code Copied!")
+        Toastify({
+            text: "📋 Code Copied!",
+            className: "info",
+            className: "notification",
+            offset: {
+                x: 20,
+                y: 20
+            },
+        }).showToast();
     })
 
     function updateDivCount(count) {

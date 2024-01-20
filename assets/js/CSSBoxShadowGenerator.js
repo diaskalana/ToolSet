@@ -1,3 +1,5 @@
+import Toastify from 'toastify-js'
+
 export function CSSBoxShadowGenerator() {
 
     document.querySelector('.modalTarget').innerHTML = `<div class="boxShadowGenerator"><div class="boxShadowGeneratorControls"><h4>CSS Style Configuration</h4><label for="cbsShadowColor">Shadow Color:</label><input type="color" id="cbsShadowColor"><label for="cbsInset">Inset:</label><select name="cbsInset" id="cbsInset"><option value="yes">Yes</option><option value="no">No</option></select><label for="cbsHorizontalOffset">Horizontal Offset (px):</label><input placeholder="Enter pixel value" type="number" id="cbsHorizontalOffset"><label for="cbsVerticalOffset">Vertical Offset (px):</label><input placeholder="Enter pixel value" type="number" id="cbsVerticalOffset"><label for="cbsBlur">Blur (px):</label><input placeholder="Enter pixel value" type="number" id="cbsBlur"><label for="cbsSpread">Spread (px):</label><input placeholder="Enter pixel value" type="number" id="cbsSpread"></div><div class="boxShadowGeneratorOutput"><div class="boxShadowGeneratorPreview"><div class="cbsBox"></div></div><code class="boxShadowGeneratorCode"></code><div class="boxShadowGeneratorBtns"><button id="boxShadowGeneratorReset">Reset</button><button id="boxShadowGeneratorCopyCode">Copy Code</button></div></div></div>`
@@ -22,7 +24,16 @@ export function CSSBoxShadowGenerator() {
     boxShadowGeneratorReset.addEventListener('click', cbsResetFunc)
     boxShadowGeneratorCopyCode.addEventListener('click', () => {
         navigator.clipboard.writeText(boxShadowGeneratorCode.textContent);
-        alert("Code Copied!")
+        // alert("Code Copied!")
+        Toastify({
+            text: "📋 Code Copied!",
+            className: "info",
+            className: "notification",
+            offset: {
+                x: 20,
+                y: 20
+            },
+        }).showToast();
     })
 
     boxShadowGeneratorControls.addEventListener('input', (e) => {
