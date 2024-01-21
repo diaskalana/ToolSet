@@ -5,6 +5,8 @@ import autosize from "autosize";
 import * as htmlToImage from 'html-to-image';
 // import { toPng, toJpeg, toSvg } from 'html-to-image';
 import download from "downloadjs";
+import Toastify from 'toastify-js'
+
 
 export function codeImageGenerator() {
 
@@ -48,20 +50,34 @@ export function codeImageGenerator() {
     cigResetFunc()
     codeImageGeneratorReset.addEventListener('click', cigResetFunc)
     codeImageGeneratorDownload.addEventListener('click', () => {
-        if (cigExportType.value == 'png') {
 
-            htmlToImage.toPng(codeImageGeneratorPreview)
-                .then(function (dataUrl) {
-                    download(dataUrl, 'codeImageGenerator(ToolSet).png');
-                })
-                .catch(function (error) {
-                    console.error('oops, something went wrong!', error);
-                });
-        } else if (cigExportType.value == 'jpeg') {
-            htmlToImage.toJpeg(codeImageGeneratorPreview, { quality: 0.95 })
-                .then(function (dataUrl) {
-                    download(dataUrl, 'codeImageGenerator(ToolSet).jpeg');
-                });
+        try {
+            if (cigExportType.value == 'png') {
+
+                htmlToImage.toPng(codeImageGeneratorPreview)
+                    .then(function (dataUrl) {
+                        download(dataUrl, 'codeImageGenerator(ToolSet).png');
+                    })
+                    .catch(function (error) {
+                        console.error('oops, something went wrong!', error);
+                    });
+            } else if (cigExportType.value == 'jpeg') {
+                htmlToImage.toJpeg(codeImageGeneratorPreview, { quality: 0.95 })
+                    .then(function (dataUrl) {
+                        download(dataUrl, 'codeImageGenerator(ToolSet).jpeg');
+                    });
+            }
+            Toastify({
+                text: "📥 Image Downloaded!",
+                className: "info",
+                className: "notification",
+                offset: {
+                    x: 20,
+                    y: 20
+                },
+            }).showToast();
+        } catch (error) {
+            console.log(error)
         }
     })
 

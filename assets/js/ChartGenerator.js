@@ -2,7 +2,7 @@ import Chart from 'chart.js/auto'
 import { Colors } from 'chart.js';
 import * as htmlToImage from 'html-to-image';
 import download from "downloadjs";
-
+import Toastify from 'toastify-js'
 
 export function chartGenerator() {
     Chart.register(Colors);
@@ -44,21 +44,35 @@ export function chartGenerator() {
 
     chartGeneratorReset.addEventListener('click', cGenResetFunc)
     chartGeneratorDownload.addEventListener('click', () => {
-        if (cGenExportType.value == 'png') {
+        try {
+            if (cGenExportType.value == 'png') {
 
-            htmlToImage.toPng(chartGeneratorPreview)
-                .then(function (dataUrl) {
-                    download(dataUrl, 'chartGenerator(ToolSet).png');
-                })
-                .catch(function (error) {
-                    console.error('oops, something went wrong!', error);
-                });
-        } else if (cGenExportType.value == 'jpeg') {
-            htmlToImage.toJpeg(chartGeneratorPreview, { quality: 0.95 })
-                .then(function (dataUrl) {
-                    download(dataUrl, 'chartGenerator(ToolSet).jpeg');
-                });
+                htmlToImage.toPng(chartGeneratorPreview)
+                    .then(function (dataUrl) {
+                        download(dataUrl, 'chartGenerator(ToolSet).png');
+                    })
+                    .catch(function (error) {
+                        console.error('oops, something went wrong!', error);
+                    });
+            } else if (cGenExportType.value == 'jpeg') {
+                htmlToImage.toJpeg(chartGeneratorPreview, { quality: 0.95 })
+                    .then(function (dataUrl) {
+                        download(dataUrl, 'chartGenerator(ToolSet).jpeg');
+                    });
+            }
+            Toastify({
+                text: "📥 Image Downloaded!",
+                className: "info",
+                className: "notification",
+                offset: {
+                    x: 20,
+                    y: 20
+                },
+            }).showToast();
+        } catch (error) {
+            console.log(error)
         }
+
     })
 
     function cGenUpdateCb() {
