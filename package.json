@@ -15,8 +15,13 @@
     "autosize": "^6.0.1",
     "chart.js": "^4.4.1",
     "downloadjs": "^1.4.7",
+    "filepond": "^4.30.6",
+    "filepond-plugin-file-validate-size": "^2.2.8",
+    "filepond-plugin-file-validate-type": "^1.2.8",
+    "filepond-plugin-image-preview": "^4.6.12",
     "highlight.js": "^11.9.0",
     "html-to-image": "^1.11.11",
+    "tinymce": "^6.8.2",
     "toastify-js": "^1.12.0"
   }
 }

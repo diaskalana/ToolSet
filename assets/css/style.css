@@ -13,6 +13,13 @@
 
   --github-btn-image1: none;
   --github-btn-image2: block;
+
+  /* Modal styles */
+  --modal-max-width: 800px;
+  --modal-width: auto;
+  --modal-height: auto;
+  --modal-margin: 50px;
+  --modal-description: block;
 }
 
 [data-theme="dark"] {
@@ -29,12 +36,22 @@
   --github-btn-image1: block;
   --github-btn-image2: none;
 }
+.modalContent[maximize="true"] {
+  --modal-max-width: 100%;
+  --modal-width: 100%;
+  --modal-height: auto;
+  --modal-margin: 0;
+  --modal-description: none;
+}
 
 * {
   box-sizing: border-box;
 }
 *:focus {
   outline: none;
+}
+hr {
+  border: solid 1px var(--border-color);
 }
 body {
   padding: 0;
@@ -59,6 +76,7 @@ select {
   background-color: transparent;
   box-sizing: border-box;
 }
+
 label {
   font-size: 0.9rem;
 }
@@ -325,8 +343,10 @@ footer {
 }
 .modalContent {
   background-color: var(--bg-color);
-  max-width: 800px;
-  margin: 50px;
+  max-width: var(--modal-max-width);
+  width: var(--modal-width);
+  height: var(--modal-height);
+  margin: var(--modal-margin);
   padding: 20px;
   /* position: relative; */
 }
@@ -342,6 +362,7 @@ footer {
   margin: 0;
 }
 .modalDescription {
+  display: var(--modal-description);
   text-align: justify;
 }
 
@@ -355,6 +376,8 @@ footer {
 .close:focus {
   text-decoration: none;
   cursor: pointer;
+  fill: var(--hover-bg-color);
+  color: var(--hover-color);
 }
 
 /* Notification */
@@ -364,4 +387,29 @@ footer {
   box-shadow: 0 1px 2px 0 var(--box-shadow) !important;
   font-family: "Montserrat", sans-serif !important;
   font-size: 1rem !important;
+}
+/* Tiny MCE */
+.tox-statusbar__branding {
+  display: none !important;
+}
+.tox-promotion {
+  display: none !important;
+}
+/* File Pond */
+.filepond--credits {
+  display: none !important;
+}
+/* Scroll bar */
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #eff1f5;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  background-color: #eff1f5;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #868887;
 }

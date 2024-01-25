@@ -7,6 +7,7 @@ import { HTMLInputGenerator } from "./HTMLInputGenerator.js";
 import { CSSFlexboxGenerator } from "./CSSFlexboxGenerator.js";
 import { codeImageGenerator } from "./CodeImageGenerator.js";
 import { chartGenerator } from "./ChartGenerator.js";
+import { resumeBuilder } from "./ResumeBuilder.js";
 
 // Toastify css
 import "toastify-js/src/toastify.css"
@@ -44,6 +45,8 @@ document.querySelector('.mainContainer').onclick = function (event) {
         codeImageGenerator();
     } else if (event.target.classList.contains('chartGenerator')) {
         chartGenerator();
+    } else if (event.target.classList.contains('resumeBuilder')) {
+        resumeBuilder();
     }
 
 }
@@ -64,7 +67,7 @@ window.onclick = function (event) {
 const input = document.querySelector('#search');
 const suggestions = document.querySelector('.searchSuggestions ul');
 
-const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator', 'HTML Input Generator', 'CSS Flexbox Generator', 'Code Image Generator', 'Chart Generator'];
+const tools = ['CSS Background Image Generator', 'HTML Button Generator', 'CSS Box Shadow Generator', 'CSS Gradient Generator', 'HTML Table Generator', 'HTML Input Generator', 'CSS Flexbox Generator', 'Code Image Generator', 'Chart Generator', 'Resume Builder'];
 tools.sort()
 
 function search(str) {
@@ -139,6 +142,8 @@ function useSuggestion(e) {
         codeImageGenerator();
     } else if (e.target.innerText == 'Chart Generator') {
         chartGenerator();
+    } else if (e.target.innerText == 'Resume Builder') {
+        resumeBuilder();
     }
 
 }
@@ -150,4 +155,4 @@ document.addEventListener("click", function (e) {
 input.addEventListener('keyup', searchHandler);
 suggestions.addEventListener('click', useSuggestion);
 
-// count API
+// Resume Builder
