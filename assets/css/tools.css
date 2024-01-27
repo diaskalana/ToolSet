@@ -973,3 +973,250 @@ select {
     color-adjust: exact; /* Firefox */
   }
 }
+
+/* Social Media Post Generator */
+
+.postGenerator {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.postGeneratorControls {
+  width: 300px;
+}
+
+.postGeneratorOutput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.postGeneratorPreview {
+  /* border: 2px solid #faebd7; */
+  aspect-ratio: 4 / 3;
+  background-color: #ffffff;
+  /* border: 2px solid var(--border-color); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.postGeneratorBtns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.postGeneratorBtns > button {
+  padding: 2px 20px;
+}
+#pGenExportType {
+  padding: 5px 20px;
+  margin: 0;
+  height: auto;
+  width: auto;
+}
+
+:root {
+  --ig-font-color: #000;
+  --ig-secondary-font-color: rgb(115, 115, 115);
+  --ig-bg-color: #fff;
+  --ig-special-text: #00376b;
+}
+.instaPost[darkMode="true"] {
+  --ig-font-color: #fff;
+  --ig-secondary-font-color: rgb(168, 168, 168);
+  --ig-bg-color: #000;
+  --ig-special-text: #e0f1ff;
+}
+
+.instaPost {
+  width: 400px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 20px 68px 0px;
+  /* border: 1px solid rgb(219, 219, 219); */
+  border-radius: 5px;
+  color: var(--ig-font-color);
+  /* font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  background-color: var(--ig-bg-color);
+}
+
+.instaPostImage {
+  height: 400px;
+  background-image: url(../images/bgDummy.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.instaPostHeader,
+.instaPostBtnArray,
+.instaPostLikes,
+.instaPostText,
+.instaPostCommentCount,
+.instaPostAddComment {
+  padding: 4px 10px;
+}
+.instaPostHeader {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.instaPostUserContent,
+.instaPostMiniHeader {
+  height: 100%;
+}
+.instaPostUserImageHolder {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f09433;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1.5px;
+  padding-right: 1.5px;
+  padding-top: 1.5px;
+  padding-bottom: 1px;
+}
+
+.instaPostUserImage {
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  background-image: url(../images/avatar.jpg);
+  background-position: center top;
+  background-size: cover;
+  /* background-color: #475569; */
+  border-radius: 50%;
+  border: 2px solid var(--ig-bg-color);
+  position: relative;
+}
+.instaPostVerfiedIcon {
+  margin-left: 4px;
+}
+.instaPostBtnArray {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  color: var(--ig-font-color);
+  fill: var(--ig-font-color);
+}
+.instaPostBtnArray1 {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+.instaPostMiniHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.instaPostUserMiniData {
+  margin-left: 10px;
+}
+.instaPostUserMiniData1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.instaPostUserMiniData p {
+  margin: 0;
+}
+.instaPostGeoTag {
+  font-size: 12px;
+  /* color:; */
+}
+.instaPostFollowText {
+  color: rgb(0, 149, 246);
+  font-weight: 600;
+}
+.instaPostUsername,
+.instaPostLikes {
+  font-weight: 600;
+}
+.instaPostPeopleTag {
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 28px;
+  width: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+.instaPostAddComment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.instaPostAddCommentText {
+  margin: 0;
+}
+.instaPostAddComment,
+.instaPostAddCommentText,
+.instaPostCommentCount,
+.instaPostMoreText,
+.instaPostDate,
+.instaPostDateText,
+.instaPostFollow {
+  color: var(--ig-secondary-font-color);
+  fill: var(--ig-secondary-font-color);
+}
+.instaPostLikedBtn {
+  display: none;
+}
+
+#postGeneratorPostText {
+  font-family: "Montserrat", sans-serif;
+  color: var(--font-color);
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: solid var(--border-color) 2px;
+  resize: vertical;
+}
+.postGeneratorCb {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 20px !important;
+  display: inline-block !important;
+}
+.igCbLabel {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+.instaConfig {
+  height: 250px;
+  overflow: auto;
+  padding-right: 10px;
+}
+.instaPostText a {
+  color: var(--ig-font-color);
+  text-decoration: none;
+}
+.instaSpecialText {
+  color: var(--ig-special-text) !important;
+  text-decoration: none;
+}

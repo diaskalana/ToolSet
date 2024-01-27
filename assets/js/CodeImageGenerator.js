@@ -68,7 +68,7 @@ export function codeImageGenerator() {
                     });
             }
             Toastify({
-                text: "📥 Image Downloaded!",
+                text: "📥 Image Downloading!",
                 className: "info",
                 className: "notification",
                 offset: {
