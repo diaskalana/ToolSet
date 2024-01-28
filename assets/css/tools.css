@@ -1119,7 +1119,7 @@ select {
 }
 .instaPostBtnArray1 {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   justify-content: flex-start;
 }
 .instaPostMiniHeader {
