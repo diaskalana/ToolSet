@@ -1088,25 +1088,23 @@ select {
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 1.5px;
-  padding-right: 1.5px;
-  padding-top: 1.5px;
-  padding-bottom: 1px;
+  border: none;
+  padding: 2px;
+  position: relative;
 }
 
 .instaPostUserImage {
-  height: calc(100% - 2px);
-  width: calc(100% - 2px);
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
   background-image: url(../images/avatar.jpg);
   background-position: center top;
   background-size: cover;
-  /* background-color: #475569; */
   border-radius: 50%;
-  border: 2px solid var(--ig-bg-color);
-  position: relative;
+  border: 1.6px solid var(--ig-bg-color);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .instaPostVerfiedIcon {
   margin-left: 4px;

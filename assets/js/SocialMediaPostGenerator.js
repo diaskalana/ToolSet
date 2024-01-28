@@ -90,7 +90,7 @@ export function socialMediaPostGenerator() {
 
                 htmlToImage.toPng(postGeneratorPreview)
                     .then(function (dataUrl) {
-                        download(dataUrl, 'InstagramPost(ToolSet).png');
+                        download(dataUrl, 'SocialPost(ToolSet).png');
                     })
                     .catch(function (error) {
                         console.error('oops, something went wrong!', error);
@@ -98,7 +98,7 @@ export function socialMediaPostGenerator() {
             } else if (pGenExportType.value == 'jpeg') {
                 htmlToImage.toJpeg(postGeneratorPreview, { quality: 0.95 })
                     .then(function (dataUrl) {
-                        download(dataUrl, 'InstagramPost(ToolSet).jpeg');
+                        download(dataUrl, 'SocialPost(ToolSet).jpeg');
                     });
             }
             Toastify({
@@ -186,10 +186,12 @@ export function socialMediaPostGenerator() {
 
         if (postGeneratorBg.checked == true) {
             postGeneratorBgColor.style.display = 'block'
+            instaPost.style.boxShadow = 'rgba(0, 0, 0, 0.55) 0px 20px 68px 0px'
             postGeneratorPreview.style.backgroundColor = postGeneratorBgColor.value
 
         } else {
             postGeneratorBgColor.style.display = 'none'
+            instaPost.style.boxShadow = 'none'
             postGeneratorPreview.style.backgroundColor = 'transparent'
         }
 
