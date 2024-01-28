@@ -983,7 +983,8 @@ select {
   gap: 20px;
 }
 .postGeneratorControls {
-  width: 300px;
+  width: 250px;
+  flex-shrink: 0;
 }
 
 .postGeneratorOutput {
@@ -1193,6 +1194,7 @@ select {
   border-radius: 5px;
   border: solid var(--border-color) 2px;
   resize: vertical;
+  width: 100%;
 }
 .postGeneratorCb {
   margin: 0 !important;
