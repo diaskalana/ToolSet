@@ -22,6 +22,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Modal Controls
 // Get the modal
 const modal = document.querySelector(".modal");
+const modalContent = document.querySelector(".modalContent");
+
+const loader = document.querySelector('.loadingio-spinner-spinner-bkxhxqdhhvt')
 
 // Get the <span> element that closes the modal
 const closeBtn = document.querySelector(".close");
@@ -103,45 +106,56 @@ function handleModalOpening() {
         node.addEventListener('click', (event) => {
             if (event.target.classList.contains('toolItem')) {
                 modal.style.display = "flex";
+                modal.style.justifyContent = 'center'
+                loader.style.display = 'inline-block'
+                modalContent.style.display = 'none'
             }
-            if (event.target.classList.contains('htmlCat')) {
-                handleCategories(htmlCategory, 'HTML Tools', 'HTML tools are web-based utilities designed to simplify the process of creating HTML code for web development. These tools cater to both beginners and experienced developers, offering a user-friendly interface that eliminates the need for manual coding.')
-            } else if (event.target.classList.contains('cssCat')) {
-                handleCategories(cssCategory, 'CSS Tools', 'CSS tools are web-based applications that simplify the process of creating Cascading Style Sheets (CSS) for websites or web applications. These tools are designed to assist both beginners and experienced developers in generating CSS code without the need for extensive manual coding.')
-            } else if (event.target.classList.contains('jsCat')) {
-                handleCategories(jsCategory, 'Javascript Tools', 'JavaScript tools are web-based utilities designed to assist developers in quickly generating code snippets or entire scripts in the JavaScript programming language. These tools are valuable for streamlining the coding process, saving time, and reducing the likelihood of syntax errors.')
-            } else if (event.target.classList.contains('otherCat')) {
-                handleCategories(otherCategory, 'Other Tools', 'These tools are web-based utilities designed to assist developers in quickly generating charts, resumes and many more. These tools are valuable for streamlining the coding process, saving time, and increasing productivity.')
-            }
-
-            if (event.target.classList.contains('CSSBackgroundImageGenerator')) {
-                CSSBackgroundImageGenerator();
-            } else if (event.target.classList.contains('HTMLButtonGenerator')) {
-                HTMLButtonGenerator();
-            } else if (event.target.classList.contains('CSSBoxShadowGenerator')) {
-                CSSBoxShadowGenerator();
-            } else if (event.target.classList.contains('CSSGradientGenerator')) {
-                CSSGradientGenerator();
-            } else if (event.target.classList.contains('HTMLTableGenerator')) {
-                HTMLTableGenerator();
-            } else if (event.target.classList.contains('HTMLInputGenerator')) {
-                HTMLInputGenerator();
-            } else if (event.target.classList.contains('CSSFlexboxGenerator')) {
-                CSSFlexboxGenerator();
-            } else if (event.target.classList.contains('codeImageGenerator')) {
-                codeImageGenerator();
-            } else if (event.target.classList.contains('chartGenerator')) {
-                chartGenerator();
-            } else if (event.target.classList.contains('resumeBuilder')) {
-                resumeBuilder();
-            } else if (event.target.classList.contains('socialMediaPostGenerator')) {
-                socialMediaPostGenerator();
-            }
+            setTimeout(function () {
+                loadModalContent(event)
+                loader.style.display = 'none'
+                modal.style.justifyContent = 'flex-start'
+                modalContent.style.display = 'block'
+            }, 100);
         })
     })
 
 }
 
+function loadModalContent(event) {
+    if (event.target.classList.contains('htmlCat')) {
+        handleCategories(htmlCategory, 'HTML Tools', 'HTML tools are web-based utilities designed to simplify the process of creating HTML code for web development. These tools cater to both beginners and experienced developers, offering a user-friendly interface that eliminates the need for manual coding.')
+    } else if (event.target.classList.contains('cssCat')) {
+        handleCategories(cssCategory, 'CSS Tools', 'CSS tools are web-based applications that simplify the process of creating Cascading Style Sheets (CSS) for websites or web applications. These tools are designed to assist both beginners and experienced developers in generating CSS code without the need for extensive manual coding.')
+    } else if (event.target.classList.contains('jsCat')) {
+        handleCategories(jsCategory, 'Javascript Tools', 'JavaScript tools are web-based utilities designed to assist developers in quickly generating code snippets or entire scripts in the JavaScript programming language. These tools are valuable for streamlining the coding process, saving time, and reducing the likelihood of syntax errors.')
+    } else if (event.target.classList.contains('otherCat')) {
+        handleCategories(otherCategory, 'Other Tools', 'These tools are web-based utilities designed to assist developers in quickly generating charts, resumes and many more. These tools are valuable for streamlining the coding process, saving time, and increasing productivity.')
+    }
+
+    if (event.target.classList.contains('CSSBackgroundImageGenerator')) {
+        CSSBackgroundImageGenerator();
+    } else if (event.target.classList.contains('HTMLButtonGenerator')) {
+        HTMLButtonGenerator();
+    } else if (event.target.classList.contains('CSSBoxShadowGenerator')) {
+        CSSBoxShadowGenerator();
+    } else if (event.target.classList.contains('CSSGradientGenerator')) {
+        CSSGradientGenerator();
+    } else if (event.target.classList.contains('HTMLTableGenerator')) {
+        HTMLTableGenerator();
+    } else if (event.target.classList.contains('HTMLInputGenerator')) {
+        HTMLInputGenerator();
+    } else if (event.target.classList.contains('CSSFlexboxGenerator')) {
+        CSSFlexboxGenerator();
+    } else if (event.target.classList.contains('codeImageGenerator')) {
+        codeImageGenerator();
+    } else if (event.target.classList.contains('chartGenerator')) {
+        chartGenerator();
+    } else if (event.target.classList.contains('resumeBuilder')) {
+        resumeBuilder();
+    } else if (event.target.classList.contains('socialMediaPostGenerator')) {
+        socialMediaPostGenerator();
+    }
+}
 
 
 // }
@@ -217,7 +231,20 @@ function useSuggestion(e) {
     suggestions.classList.remove('has-suggestions');
 
     modal.style.display = "flex";
+    modal.style.justifyContent = 'center'
+    loader.style.display = 'inline-block'
+    modalContent.style.display = 'none'
 
+    setTimeout(function () {
+        loadModalContentFromSearch(e)
+        loader.style.display = 'none'
+        modal.style.justifyContent = 'flex-start'
+        modalContent.style.display = 'block'
+    }, 100);
+
+}
+
+function loadModalContentFromSearch(e) {
     // Update each time you add a tool
     if (e.target.innerText == 'CSS Background Image Generator') {
         CSSBackgroundImageGenerator();
@@ -242,7 +269,6 @@ function useSuggestion(e) {
     } else if (e.target.innerText == 'Social Media Post Generator') {
         socialMediaPostGenerator();
     }
-
 }
 
 document.addEventListener("click", function (e) {
@@ -256,7 +282,7 @@ suggestions.addEventListener('click', useSuggestion);
 
 function handleCategories(categoryArray, catName, catDescription) {
 
-    document.querySelector('.modalTarget').innerHTML = `<div class="categoryContainer toolClickArea"><div class="categorySearchContainer"><input placeholder="Search Category..." type="search" autocomplete="off" class="categorySearch"></div><div class="categorySearchContent"><table class="categorySearchResult"><thead><tr><th class="catTableTool">Tool</th><th class="catTableDesc">Description</th></tr></thead><tbody class="catTableBody"><tr><td><p>Background Image Generator</p></td><td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus provident quaerat vel numquam sed hic accusantium magnam voluptates possimus ad quibusdam similique adipisci quas, suscipit, sunt nihil quidem, tempora ducimus.</td></tr></tbody></table><div class="categorySearchNoResult"><p>No Results Found!</p></div></div></div>`
+    document.querySelector('.modalTarget').innerHTML = `<div class="categoryContainer toolClickArea"><div class="categorySearchContainer"><input placeholder="Search Category..." type="search" autofocus autocomplete="off" class="categorySearch"></div><div class="categorySearchContent"><table class="categorySearchResult"><thead><tr><th class="catTableTool">Tool</th><th class="catTableDesc">Description</th></tr></thead><tbody class="catTableBody"><tr><td><p></p></td><td></td></tr></tbody></table><div class="categorySearchNoResult"><p>No Results Found!</p></div></div></div>`
 
     handleModalOpening()
 
@@ -316,7 +342,5 @@ function handleCategories(categoryArray, catName, catDescription) {
     })
 
 }
-
-
 
 // Social Media Post Generator
