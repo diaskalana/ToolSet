@@ -4,6 +4,8 @@ import * as htmlToImage from 'html-to-image';
 import download from "downloadjs";
 import Toastify from 'toastify-js'
 
+import '../css/ChartGenerator.css'
+
 export function chartGenerator() {
     Chart.register(Colors);
 

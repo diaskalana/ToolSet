@@ -1,0 +1,42 @@
+/* CSS Gradient Generator */
+.cssGradientGenerator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.cssGradientGeneratorControls {
+  width: 400px;
+}
+
+.cssGradientGeneratorOutput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cssGradientGeneratorPreview {
+  aspect-ratio: 16 / 9;
+  background-color: #faebd7;
+  border: 2px solid var(--border-color);
+}
+.cssGradientGeneratorCode {
+  border: 2px solid var(--border-color);
+  padding: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  /* height: 50px; */
+}
+.cssGradientGeneratorBtns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.cssGradientGeneratorBtns > button {
+  padding: 5px 20px;
+}

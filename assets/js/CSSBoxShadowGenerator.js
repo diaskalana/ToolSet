@@ -1,4 +1,5 @@
 import Toastify from 'toastify-js'
+import '../css/CSSBoxShadowGenerator.css'
 
 export function CSSBoxShadowGenerator() {
 

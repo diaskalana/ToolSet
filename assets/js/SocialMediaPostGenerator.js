@@ -9,7 +9,7 @@ import { round, changeSeparators } from "@alesmenzel/number-format";
 import * as htmlToImage from 'html-to-image';
 import download from "downloadjs";
 
-
+import '../css/SocialMediaPostGenerator.css'
 import 'filepond/dist/filepond.min.css';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 

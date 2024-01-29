@@ -7,6 +7,7 @@ import * as htmlToImage from 'html-to-image';
 import download from "downloadjs";
 import Toastify from 'toastify-js'
 
+import '../css/CodeImageGenerator.css'
 
 export function codeImageGenerator() {
 

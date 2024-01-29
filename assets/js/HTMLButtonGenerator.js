@@ -1,4 +1,5 @@
 import Toastify from 'toastify-js'
+import '../css/HTMLButtonGenerator.css'
 
 export function HTMLButtonGenerator() {
 

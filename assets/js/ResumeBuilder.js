@@ -7,6 +7,8 @@ import Toastify from 'toastify-js'
 
 import 'filepond/dist/filepond.min.css';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
+import '../css/ResumeBuilder.css'
+
 
 export function resumeBuilder() {
 

@@ -1,4 +1,6 @@
 import Toastify from 'toastify-js'
+import '../css/HTMLInputGenerator.css'
+
 
 export function HTMLInputGenerator() {
 

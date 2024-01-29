@@ -1,0 +1,79 @@
+/* HTML Input Generator */
+.htmlInputGenerator {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.htmlInputGeneratorControls,
+.htmlInputGeneratorContainer {
+  /* width: 400px; */
+  width: 100%;
+}
+
+.htmlInputGeneratorOutput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.htmlInputGeneratorPreview {
+  aspect-ratio: 16 / 9;
+  background-color: #faebd7;
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+.htmlInputGeneratorPreview input {
+  all: revert;
+}
+.htmlInputGeneratorCode {
+  border: 2px solid var(--border-color);
+  padding: 10px;
+  height: 100px;
+  overflow: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.htmlInputGeneratorBtns {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 20px; */
+}
+.htmlInputGeneratorBtns > button {
+  padding: 5px 20px;
+  /* width: 100%; */
+}
+
+.higCheckboxes {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.higCheckboxes input {
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+.higCheckboxes label {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  flex-shrink: 1;
+}
+.higTypeSelections {
+  display: none;
+}
