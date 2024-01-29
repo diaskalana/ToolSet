@@ -278,6 +278,9 @@ hr {
   padding: 5px 20px;
   /* margin: 0 10px 20px 10px; */
 }
+a.toolItem {
+  padding: 0;
+}
 footer {
   display: flex;
   justify-content: space-between;
@@ -412,4 +415,55 @@ footer {
 
 *::-webkit-scrollbar-thumb {
   background-color: #868887;
+}
+
+/* Category Modal */
+
+.modalTarget .categorySearch {
+  width: 100%;
+  padding: 10px;
+  border: solid var(--border-color) 2px;
+  height: 100%;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.categorySearchContent {
+  min-height: 300px;
+  max-height: 400px;
+  overflow: auto;
+}
+.categorySearchResult {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+}
+/* .categorySearchResult thead,
+.categorySearchResult tbody {
+  width: 100%;
+} */
+.categorySearchNoResult {
+  text-align: center;
+  display: none;
+}
+
+.categorySearchResult th,
+.categorySearchResult td {
+  border: var(--border-color) solid 2px;
+  padding: 10px;
+}
+.catTableTool {
+  width: 30%;
+}
+.catTableTool,
+.catTableDesc {
+  font-weight: 600;
+}
+.catTableBody p {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: inline;
+}
+.catTableBody p:hover {
+  border-bottom: var(--border-color) solid 2px;
 }

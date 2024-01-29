@@ -20,6 +20,7 @@
     "filepond-plugin-file-validate-size": "^2.2.8",
     "filepond-plugin-file-validate-type": "^1.2.8",
     "filepond-plugin-image-preview": "^4.6.12",
+    "filter-data": "^0.5.1",
     "highlight.js": "^11.9.0",
     "html-to-image": "^1.11.11",
     "linkify-plugin-hashtag": "^4.1.3",
