@@ -9,6 +9,8 @@ import { round, changeSeparators } from "@alesmenzel/number-format";
 import * as htmlToImage from 'html-to-image';
 import download from "downloadjs";
 
+import profilePicture from '../images/avatar.jpg'
+import postPicture from '../images/bgDummy.jpg'
 import '../css/SocialMediaPostGenerator.css'
 import 'filepond/dist/filepond.min.css';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
@@ -175,8 +177,8 @@ export function socialMediaPostGenerator() {
         igPeopleTagged.checked = true
         igLikedPost.checked = true
 
-        instaPostUserImage.style.backgroundImage = `url(./assets/images/avatar.jpg)`
-        instaPostImage.style.backgroundImage = `url(./assets/images/bgDummy.jpg)`
+        instaPostUserImage.style.backgroundImage = `url(${profilePicture})`
+        instaPostImage.style.backgroundImage = `url(${postPicture})`
 
         updateInstaPost()
     }

@@ -68,7 +68,7 @@ export function CSSBackgroundImageGenerator() {
     function bigResetFunc() {
         modalTitle.textContent = 'CSS Background Image Generator'
         modalDescription.textContent = 'CSS background image generator simplifies the process of creating customized background images for websites by providing a user-friendly interface to adjust settings and generate corresponding CSS code.'
-        bigImgURL.value = './assets/images/bgDummy.jpg'
+        bigImgURL.value = 'https://placehold.co/600x400'
         bigBgColor.value = '#faebd7'
         bigPosition.value = 'center center'
         bigSize.value = 'cover'

@@ -1,5 +1,4 @@
 import hljs from 'highlight.js';
-// import 'highlight.js/styles/a11y-light.css';
 import autosize from "autosize";
 // import html2canvas from 'html2canvas';
 import * as htmlToImage from 'html-to-image';
@@ -40,12 +39,14 @@ export function codeImageGenerator() {
 
     const cigPre = document.querySelector('#cigPre')
     const cigText = document.querySelector('#cigText')
-    const cigStylesheet = document.querySelector('#cigStylesheet')
 
     const codeImageGeneratorReset = document.querySelector('#codeImageGeneratorReset')
     const codeImageGeneratorDownload = document.querySelector('#codeImageGeneratorDownload')
     const cigExportType = document.querySelector('#cigExportType')
 
+    const cigStylesheet = document.createElement('link')
+    cigStylesheet.rel = 'stylesheet'
+    document.head.appendChild(cigStylesheet)
 
 
     cigResetFunc()
@@ -106,7 +107,7 @@ export function codeImageGenerator() {
     }
 
     function cigUpdateStyle() {
-        cigStylesheet.setAttribute('href', `node_modules\\highlight.js\\styles\\${cigTheme.value}.css`)
+        cigStylesheet.setAttribute('href', `https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/${cigTheme.value}.min.css`)
 
         codeImageGeneratorPreview.style.aspectRatio = cigAspectRatio.value
         codeImageGeneratorPreview.style.backgroundColor = cigBgColor.value
